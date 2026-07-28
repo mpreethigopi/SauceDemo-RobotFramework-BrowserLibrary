@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-07-28T11:21:58.994154" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkout Product" source="D:\Playwright-Salesforce\tests\checkout_product.robot">
+<test id="s1-t1" name="TC13_Verify add single item to the cart" line="15">
+<kw name="Open Application" owner="common" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-07-28T11:22:00.122980" level="INFO">{"browser": "chromium", "headless": false, "args": ["--start--maximized"], "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "D:\\Playwright-Salesforce\\browser\\traces\\temp\\cbf73ad9-3df5-40c4-b186-fd0616186b04"}</msg>
+<msg time="2026-07-28T11:22:00.202523" level="INFO">Starting Browser process C:\Users\Preethi_Gopi\AppData\Local\Programs\Python\Python312\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:57542</msg>
+<msg time="2026-07-28T11:22:02.178637" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"args":["--start--maximized"],"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"D:\\Playwright-Salesforce\\browser\\traces\\temp\\cbf73ad9-3df5-40c4-b186-fd0616186b04"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start--maximized"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-07-28T11:22:00.120425" elapsed="2.058212"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2026-07-28T11:22:02.183629" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2026-07-28T11:22:02.236199" level="INFO">Successfully created context. </msg>
+<msg time="2026-07-28T11:22:02.237199" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-07-28T11:22:02.179628" elapsed="0.057571"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-07-28T11:22:03.243654" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com</msg>
+<arg>https://www.saucedemo.com</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-07-28T11:22:02.238201" elapsed="1.005453"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:00.117035" elapsed="3.127747"/>
+</kw>
+<kw name="Login into Application" owner="loginpage">
+<kw name="Enter Username" owner="loginpage">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-07-28T11:22:03.247250" level="INFO">Fills the text 'standard_user' in the given field.</msg>
+<arg>${username}</arg>
+<arg>standard_user</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:03.245824" elapsed="0.097293"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:03.245824" elapsed="0.097293"/>
+</kw>
+<kw name="Enter Password" owner="loginpage">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-07-28T11:22:03.345115" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
+<arg>${password}</arg>
+<arg>secret_sauce</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:03.344115" elapsed="0.027865"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:03.343117" elapsed="0.028863"/>
+</kw>
+<kw name="Click on Signin" owner="loginpage">
+<kw name="Click" owner="Browser">
+<msg time="2026-07-28T11:22:03.374219" level="INFO">Clicks the element 'xpath=//*[@id='login-button']'.</msg>
+<arg>${login}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:03.373224" elapsed="0.169113"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:03.371980" elapsed="0.170357"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:03.244782" elapsed="0.297555"/>
+</kw>
+<kw name="Verify the homepage loaded" owner="homepage">
+<kw name="Wait For Load State" owner="Browser">
+<msg time="2026-07-28T11:22:03.544832" level="INFO">Waiting page load to state to receive networkidle in 10000.0</msg>
+<msg time="2026-07-28T11:22:04.966680" level="INFO">Load state networkidle got in 10000</msg>
+<arg>networkidle</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits that the page reaches the required load state.</doc>
+<status status="PASS" start="2026-07-28T11:22:03.543649" elapsed="1.423031"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-07-28T11:22:04.981139" level="INFO">Waited for Element with selector xpath=//*[@class='app_logo'] at state visible</msg>
+<arg>${home_page}</arg>
+<arg>visible</arg>
+<arg>50s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-07-28T11:22:04.966680" elapsed="0.014459"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:03.542337" elapsed="1.440031"/>
+</kw>
+<kw name="Adding product to cart" owner="add_remove_to_cart">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-07-28T11:22:04.983406" level="INFO">${products} = ['Sauce Labs Fleece Jacket']</msg>
+<var>${products}</var>
+<arg>@{product_name}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-07-28T11:22:04.983406" elapsed="0.000998"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-07-28T11:22:04.984404" level="INFO">${SELECTED_PRODUCTS} = ['Sauce Labs Fleece Jacket']</msg>
+<arg>${SELECTED_PRODUCTS}</arg>
+<arg>${products}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-07-28T11:22:04.984404" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-07-28T11:22:04.985414" level="INFO">Length is 1.</msg>
+<msg time="2026-07-28T11:22:04.985414" level="INFO">${product_count} = 1</msg>
+<var>${product_count}</var>
+<arg>${products}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-07-28T11:22:04.984404" elapsed="0.001010"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2026-07-28T11:22:04.986421" level="INFO">${product_count} = 1</msg>
+<arg>${product_count}</arg>
+<arg>${product_count}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2026-07-28T11:22:04.985414" elapsed="0.001007"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-07-28T11:22:04.987424" level="INFO">${add_product_name_cart} = xpath=//*[contains(text(),"Sauce Labs Fleece Jacket")]/ancestor::div[@class='inventory_item']//button</msg>
+<var>${add_product_name_cart}</var>
+<arg>${add_cart}</arg>
+<arg>PRODUCT_NAME</arg>
+<arg>${each_product}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-07-28T11:22:04.986421" elapsed="0.001003"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-07-28T11:22:04.988422" level="INFO">Clicks the element 'xpath=//*[contains(text(),"Sauce Labs Fleece Jacket")]/ancestor::div[@class='inventory_item']//button'.</msg>
+<arg>${add_product_name_cart}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:04.987424" elapsed="0.043816"/>
+</kw>
+<var name="${each_product}">Sauce Labs Fleece Jacket</var>
+<status status="PASS" start="2026-07-28T11:22:04.986421" elapsed="0.044819"/>
+</iter>
+<var>${each_product}</var>
+<value>@{product_name}</value>
+<status status="PASS" start="2026-07-28T11:22:04.986421" elapsed="0.044819"/>
+</for>
+<arg>Sauce Labs Fleece Jacket</arg>
+<status status="PASS" start="2026-07-28T11:22:04.982368" elapsed="0.048872"/>
+</kw>
+<kw name="Verify cart badge count" owner="add_remove_to_cart">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-07-28T11:22:05.034240" level="INFO">Length is 1.</msg>
+<msg time="2026-07-28T11:22:05.034240" level="INFO">${expected_count} = 1</msg>
+<var>${expected_count}</var>
+<arg>${SELECTED_PRODUCTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.033238" elapsed="0.001002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>expected_count=${expected_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.035239" elapsed="0.001000"/>
+</kw>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2026-07-28T11:22:05.052774" level="INFO">${badge_exists} = 1</msg>
+<var>${badge_exists}</var>
+<arg>${cart_badge}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.037236" elapsed="0.015538"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>badge_exists=${badge_exists}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.053775" elapsed="0.002166"/>
+</kw>
+<if>
+<branch type="IF" condition="${expected_count} == 0">
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${badge_exists}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2026-07-28T11:22:05.058319" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-07-28T11:22:05.056941" elapsed="0.001378"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" owner="Browser">
+<msg time="2026-07-28T11:22:05.116578" level="INFO">Text: ['1']</msg>
+<msg time="2026-07-28T11:22:05.116578" level="INFO">${cart_badge_count} = 1</msg>
+<var>${cart_badge_count}</var>
+<arg>${cart_badge}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.058319" elapsed="0.058259"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>count=${cart_badge_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.117580" elapsed="0.001007"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-07-28T11:22:05.119652" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${expected_count}</arg>
+<arg>${cart_badge_count}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.118587" elapsed="0.001065"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:05.058319" elapsed="0.061333"/>
+</branch>
+<status status="PASS" start="2026-07-28T11:22:05.056941" elapsed="0.062711"/>
+</if>
+<status status="PASS" start="2026-07-28T11:22:05.032241" elapsed="0.087411"/>
+</kw>
+<kw name="Verify cart items" owner="add_remove_to_cart">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${SELECTED_PRODUCTS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.121644" elapsed="0.001110"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-07-28T11:22:05.125647" level="INFO">Clicks the element 'xpath=//*[@class='shopping_cart_link']'.</msg>
+<arg>${cart_click}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.123631" elapsed="0.100659"/>
+</kw>
+<kw name="Get Elements" owner="Browser">
+<msg time="2026-07-28T11:22:05.248026" level="INFO">Found 1 Locators successfully.</msg>
+<msg time="2026-07-28T11:22:05.248026" level="INFO">${product_items} = ["xpath=//*[@class='inventory_item_name'] &gt;&gt; nth=0"]</msg>
+<var>${product_items}</var>
+<arg>${cart_items_name}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.225307" elapsed="0.022719"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-07-28T11:22:05.249029" level="INFO">Length is 1.</msg>
+<msg time="2026-07-28T11:22:05.249029" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>${product_items}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.249029" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.250019" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-07-28T11:22:05.252009" level="INFO">Length is 1.</msg>
+<msg time="2026-07-28T11:22:05.252009" level="INFO">${product_name_count} = 1</msg>
+<var>${product_name_count}</var>
+<arg>${SELECTED_PRODUCTS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.251015" elapsed="0.000994"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${product_name_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.252009" elapsed="0.001140"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${count}</arg>
+<arg>${product_name_count}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.253149" elapsed="0.002074"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Before:${index}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.257736" elapsed="0.001010"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-07-28T11:22:05.259992" level="INFO">${each_product_name_text} = xpath=//*[@class='inventory_item_name'] &gt;&gt; nth=0</msg>
+<var>${each_product_name_text}</var>
+<arg>${product_items}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.258746" elapsed="0.001246"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-07-28T11:22:05.289960" level="INFO">Text: ['Sauce Labs Fleece Jacket']</msg>
+<msg time="2026-07-28T11:22:05.289960" level="INFO">${actual} = Sauce Labs Fleece Jacket</msg>
+<var>${actual}</var>
+<arg>${each_product_name_text}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.259992" elapsed="0.029968"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>After:${actual}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.289960" elapsed="0.002002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${SELECTED_PRODUCTS}[${index}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.292964" elapsed="0.001001"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${SELECTED_PRODUCTS}[${index}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.294968" elapsed="0.000994"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2026-07-28T11:22:05.256223" elapsed="0.039739"/>
+</iter>
+<var>${index}</var>
+<value>${count}</value>
+<status status="PASS" start="2026-07-28T11:22:05.255223" elapsed="0.040739"/>
+</for>
+<status status="PASS" start="2026-07-28T11:22:05.120638" elapsed="0.175324"/>
+</kw>
+<kw name="Checkout the products" owner="checkoutpage">
+<kw name="Click" owner="Browser">
+<msg time="2026-07-28T11:22:05.300857" level="INFO">Clicks the element 'xpath=//*[contains(text(),'Checkout')]'.</msg>
+<arg>${checkout}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.299466" elapsed="0.075532"/>
+</kw>
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2026-07-28T11:22:05.377085" level="INFO">${firstname} = Debra</msg>
+<var>${firstname}</var>
+<status status="PASS" start="2026-07-28T11:22:05.375998" elapsed="0.001087"/>
+</kw>
+<kw name="Last Name" owner="FakerLibrary">
+<msg time="2026-07-28T11:22:05.379169" level="INFO">${lastname} = Patel</msg>
+<var>${lastname}</var>
+<status status="PASS" start="2026-07-28T11:22:05.377085" elapsed="0.002084"/>
+</kw>
+<kw name="Postalcode" owner="FakerLibrary">
+<msg time="2026-07-28T11:22:05.380159" level="INFO">${pcode} = 38404</msg>
+<var>${pcode}</var>
+<status status="PASS" start="2026-07-28T11:22:05.379169" elapsed="0.000990"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-07-28T11:22:05.381294" level="INFO">Types the text 'Debra' in the given field.</msg>
+<arg>${fname}</arg>
+<arg>${firstname}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.380159" elapsed="0.119527"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-07-28T11:22:05.501676" level="INFO">Types the text 'Patel' in the given field.</msg>
+<arg>${lname}</arg>
+<arg>${lastname}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.500682" elapsed="0.100034"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-07-28T11:22:05.603230" level="INFO">Types the text '38404' in the given field.</msg>
+<arg>${postal_code}</arg>
+<arg>${pcode}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.602187" elapsed="0.089226"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Firstname=${firstname}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.692430" elapsed="0.003048"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Lastname=${lastname}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.695478" elapsed="0.001456"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Postalcode=${pcode}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.697940" elapsed="0.000999"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-07-28T11:22:05.699946" level="INFO">Clicks the element 'xpath=//*[@id='continue']'.</msg>
+<arg>${continue}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.698939" elapsed="0.090236"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-07-28T11:22:05.791154" level="INFO">Clicks the element 'xpath=//*[@name='finish']'.</msg>
+<arg>${finish}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.790155" elapsed="0.062364"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:05.296960" elapsed="0.556573"/>
+</kw>
+<kw name="Close Application" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-07-28T11:22:06.392823" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-07-28T11:22:05.854515" elapsed="0.539311"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:05.854515" elapsed="0.539311"/>
+</kw>
+<status status="PASS" start="2026-07-28T11:22:00.116042" elapsed="6.277784"/>
+</test>
+<status status="PASS" start="2026-07-28T11:21:58.998960" elapsed="7.406815"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Checkout Product" id="s1" pass="1" fail="0" skip="0">Checkout Product</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
