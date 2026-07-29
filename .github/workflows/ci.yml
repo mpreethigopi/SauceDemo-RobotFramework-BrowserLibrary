@@ -18,17 +18,17 @@ jobs:
     with:
         python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        rfbrowser init
+  - name: Install dependencies
+    run: |
+      pip install -r requirements.txt
+      rfbrowser init
 
-    - name: Run Robot Tests (Pabot Parallel)
-      run: |
-        pabot --processes 4 --outputdir reports tests/
+  - name: Run Robot Tests (Pabot Parallel)
+    run: |
+      pabot --processes 4 --outputdir reports tests/
 
-    - name: Upload Reports
-      uses: actions/upload-artifact@v3
-      with:
+  - name: Upload Reports
+    uses: actions/upload-artifact@v3
+    with:
         name: robot-reports
         path: reports/
