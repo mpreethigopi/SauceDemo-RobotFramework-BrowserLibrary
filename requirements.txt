@@ -1,5 +1,5 @@
 robotframework
 robotframework-browser
-allure-robotframework
+robotframework-pabot
 requests
 python-dotenv
