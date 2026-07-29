@@ -2,7 +2,7 @@ name: Robot Framework CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ SauceDemo ]
   pull_request:
 
 jobs:
